@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fred &mdash; plutoPy  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Indices" href="Indices.html" />
+    <link rel="prev" title="model" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> plutoPy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">model</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fred</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Indices.html">Indices</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples-Fred.html">Using Fred</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples-Indices.html">Using Indices</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">plutoPy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">model</a> &raquo;</li>
+        
+      <li>Fred</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Fred.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-model.Fred">
+<span id="fred"></span><h1>Fred<a class="headerlink" href="#module-model.Fred" title="Permalink to this headline">¶</a></h1>
+<p>St. Louis Fed FRED cache</p>
+<p>sources: <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p>
+<span class="target" id="module-Fred"></span><dl class="class">
+<dt id="model.Fred.Meta">
+<em class="property">class </em><code class="sig-prename descclassname">model.Fred.</code><code class="sig-name descname">Meta</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Fred.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">model.Db.StockVizUs</span></code></p>
+<p>Query the FRED meta-data cache</p>
+<dl class="attribute">
+<dt id="model.Fred.Meta.FREQUENCY">
+<code class="sig-name descname">FREQUENCY</code><a class="headerlink" href="#model.Fred.Meta.FREQUENCY" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘D’ for day, ‘M’ for month, ‘Q’ for quarter, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.Meta.NAME">
+<code class="sig-name descname">NAME</code><a class="headerlink" href="#model.Fred.Meta.NAME" title="Permalink to this definition">¶</a></dt>
+<dd><p>title</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.Meta.SEASON_ADJUST">
+<code class="sig-name descname">SEASON_ADJUST</code><a class="headerlink" href="#model.Fred.Meta.SEASON_ADJUST" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘SA’ for seasonally adjusted, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.Meta.SERIES_ID">
+<code class="sig-name descname">SERIES_ID</code><a class="headerlink" href="#model.Fred.Meta.SERIES_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>use this to query the time-series</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.Meta.TICKER">
+<code class="sig-name descname">TICKER</code><a class="headerlink" href="#model.Fred.Meta.TICKER" title="Permalink to this definition">¶</a></dt>
+<dd><p>FRED id</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.Meta.UNITS">
+<code class="sig-name descname">UNITS</code><a class="headerlink" href="#model.Fred.Meta.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘Miles’, ‘Million of Dollars’, etc.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="model.Fred.TimeSeries">
+<em class="property">class </em><code class="sig-prename descclassname">model.Fred.</code><code class="sig-name descname">TimeSeries</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Fred.TimeSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">model.Db.StockVizUs</span></code></p>
+<p>Query the FRED time-series cache</p>
+<dl class="attribute">
+<dt id="model.Fred.TimeSeries.SERIES_ID">
+<code class="sig-name descname">SERIES_ID</code><a class="headerlink" href="#model.Fred.TimeSeries.SERIES_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.TimeSeries.TIME_STAMP">
+<code class="sig-name descname">TIME_STAMP</code><a class="headerlink" href="#model.Fred.TimeSeries.TIME_STAMP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="model.Fred.TimeSeries.VAL">
+<code class="sig-name descname">VAL</code><a class="headerlink" href="#model.Fred.TimeSeries.VAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Indices.html" class="btn btn-neutral float-right" title="Indices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, shyam
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
