@@ -6,7 +6,7 @@ Using Fred
 	"""This example illustrates how to get a list of all Fred time-series that have 'India' in its title."""
 	
 	from sqlalchemy import func
-	from model import RoutingSession, Fred
+	from plutoPy.model import RoutingSession, Fred
 
 	#a list of india focused indices mainted by the Fred
 	results = RoutingSession.session.query(Fred.Meta.SERIES_ID, Fred.Meta.TICKER, Fred.Meta.NAME, func.min(Fred.TimeSeries.TIME_STAMP).label("start_dt"), func.max(Fred.TimeSeries.TIME_STAMP).label("end_dt")).\

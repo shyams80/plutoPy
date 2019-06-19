@@ -155,71 +155,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-model.Fred">
-<span id="fred"></span><h1>Fred<a class="headerlink" href="#module-model.Fred" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-plutoPy.model.Fred">
+<span id="fred"></span><h1>Fred<a class="headerlink" href="#module-plutoPy.model.Fred" title="Permalink to this headline">¶</a></h1>
 <p>St. Louis Fed FRED cache</p>
 <p>sources: <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p>
 <span class="target" id="module-Fred"></span><dl class="class">
-<dt id="model.Fred.Meta">
-<em class="property">class </em><code class="sig-prename descclassname">model.Fred.</code><code class="sig-name descname">Meta</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Fred.Meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">model.Db.StockVizUs</span></code></p>
+<dt id="plutoPy.model.Fred.Meta">
+<em class="property">class </em><code class="sig-prename descclassname">plutoPy.model.Fred.</code><code class="sig-name descname">Meta</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plutoPy.model.Fred.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">plutoPy.model.Db.StockVizUs</span></code></p>
 <p>Query the FRED meta-data cache</p>
 <dl class="attribute">
-<dt id="model.Fred.Meta.FREQUENCY">
-<code class="sig-name descname">FREQUENCY</code><a class="headerlink" href="#model.Fred.Meta.FREQUENCY" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.Meta.FREQUENCY">
+<code class="sig-name descname">FREQUENCY</code><a class="headerlink" href="#plutoPy.model.Fred.Meta.FREQUENCY" title="Permalink to this definition">¶</a></dt>
 <dd><p>‘D’ for day, ‘M’ for month, ‘Q’ for quarter, etc.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.Meta.NAME">
-<code class="sig-name descname">NAME</code><a class="headerlink" href="#model.Fred.Meta.NAME" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.Meta.NAME">
+<code class="sig-name descname">NAME</code><a class="headerlink" href="#plutoPy.model.Fred.Meta.NAME" title="Permalink to this definition">¶</a></dt>
 <dd><p>title</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.Meta.SEASON_ADJUST">
-<code class="sig-name descname">SEASON_ADJUST</code><a class="headerlink" href="#model.Fred.Meta.SEASON_ADJUST" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.Meta.SEASON_ADJUST">
+<code class="sig-name descname">SEASON_ADJUST</code><a class="headerlink" href="#plutoPy.model.Fred.Meta.SEASON_ADJUST" title="Permalink to this definition">¶</a></dt>
 <dd><p>‘SA’ for seasonally adjusted, etc.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.Meta.SERIES_ID">
-<code class="sig-name descname">SERIES_ID</code><a class="headerlink" href="#model.Fred.Meta.SERIES_ID" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.Meta.SERIES_ID">
+<code class="sig-name descname">SERIES_ID</code><a class="headerlink" href="#plutoPy.model.Fred.Meta.SERIES_ID" title="Permalink to this definition">¶</a></dt>
 <dd><p>use this to query the time-series</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.Meta.TICKER">
-<code class="sig-name descname">TICKER</code><a class="headerlink" href="#model.Fred.Meta.TICKER" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.Meta.TICKER">
+<code class="sig-name descname">TICKER</code><a class="headerlink" href="#plutoPy.model.Fred.Meta.TICKER" title="Permalink to this definition">¶</a></dt>
 <dd><p>FRED id</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.Meta.UNITS">
-<code class="sig-name descname">UNITS</code><a class="headerlink" href="#model.Fred.Meta.UNITS" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.Meta.UNITS">
+<code class="sig-name descname">UNITS</code><a class="headerlink" href="#plutoPy.model.Fred.Meta.UNITS" title="Permalink to this definition">¶</a></dt>
 <dd><p>‘Miles’, ‘Million of Dollars’, etc.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
-<dt id="model.Fred.TimeSeries">
-<em class="property">class </em><code class="sig-prename descclassname">model.Fred.</code><code class="sig-name descname">TimeSeries</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#model.Fred.TimeSeries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">model.Db.StockVizUs</span></code></p>
+<dt id="plutoPy.model.Fred.TimeSeries">
+<em class="property">class </em><code class="sig-prename descclassname">plutoPy.model.Fred.</code><code class="sig-name descname">TimeSeries</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#plutoPy.model.Fred.TimeSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sqlalchemy.ext.declarative.api.Base</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">plutoPy.model.Db.StockVizUs</span></code></p>
 <p>Query the FRED time-series cache</p>
 <dl class="attribute">
-<dt id="model.Fred.TimeSeries.SERIES_ID">
-<code class="sig-name descname">SERIES_ID</code><a class="headerlink" href="#model.Fred.TimeSeries.SERIES_ID" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.TimeSeries.SERIES_ID">
+<code class="sig-name descname">SERIES_ID</code><a class="headerlink" href="#plutoPy.model.Fred.TimeSeries.SERIES_ID" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.TimeSeries.TIME_STAMP">
-<code class="sig-name descname">TIME_STAMP</code><a class="headerlink" href="#model.Fred.TimeSeries.TIME_STAMP" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.TimeSeries.TIME_STAMP">
+<code class="sig-name descname">TIME_STAMP</code><a class="headerlink" href="#plutoPy.model.Fred.TimeSeries.TIME_STAMP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="model.Fred.TimeSeries.VAL">
-<code class="sig-name descname">VAL</code><a class="headerlink" href="#model.Fred.TimeSeries.VAL" title="Permalink to this definition">¶</a></dt>
+<dt id="plutoPy.model.Fred.TimeSeries.VAL">
+<code class="sig-name descname">VAL</code><a class="headerlink" href="#plutoPy.model.Fred.TimeSeries.VAL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

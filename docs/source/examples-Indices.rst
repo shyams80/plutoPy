@@ -6,7 +6,7 @@ Using Indices
 	"""This example illustrates how to get a list of all the latest NSE Indices"""
 	
 	from sqlalchemy import func
-	from model import RoutingSession, Indices
+	from plutoPy.model import RoutingSession, Indices
 
 	#a list of all current NSE indices
 	end_dt = RoutingSession.session.query(func.max(Indices.NseTimeSeries.TIME_STAMP)).scalar()

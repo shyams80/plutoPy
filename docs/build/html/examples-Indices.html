@@ -153,7 +153,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;This example illustrates how to get a list of all the latest NSE Indices&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">func</span>
-<span class="kn">from</span> <span class="nn">model</span> <span class="kn">import</span> <span class="n">RoutingSession</span><span class="p">,</span> <span class="n">Indices</span>
+<span class="kn">from</span> <span class="nn">plutoPy.model</span> <span class="kn">import</span> <span class="n">RoutingSession</span><span class="p">,</span> <span class="n">Indices</span>
 
 <span class="c1">#a list of all current NSE indices</span>
 <span class="n">end_dt</span> <span class="o">=</span> <span class="n">RoutingSession</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Indices</span><span class="o">.</span><span class="n">NseTimeSeries</span><span class="o">.</span><span class="n">TIME_STAMP</span><span class="p">))</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
