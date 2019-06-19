@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session, sessionmaker
 import pypyodbc
 from .Db import StockViz, StockVizUs, StockVizUs2
 
-from Config import config
+from ..Config import config
 
 engines = {
     'stockviz': create_engine(config['DEFAULT']['NORWAY_STOCKVIZ_CON'], module=pypyodbc, echo=False),
