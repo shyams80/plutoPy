@@ -1,7 +1,7 @@
 Indices
 ==============
 
-.. automodule:: plutoPy.model.Indices
+.. automodule:: model.Indices
    :members:
    :undoc-members:
    :show-inheritance:
