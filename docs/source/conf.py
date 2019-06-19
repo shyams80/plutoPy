@@ -13,7 +13,7 @@
 import os
 import sys
 #sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, 'D:\\shyam\\Documents\\public\\plutoPy')
+sys.path.insert(0, '..\\..\\plutoPy')
 
 # -- Project information -----------------------------------------------------
 
