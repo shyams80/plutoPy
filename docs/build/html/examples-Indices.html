@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using MutualFundsIndia" href="examples-MutualFundsIndia.html" />
     <link rel="prev" title="Using Fred" href="examples-Fred.html" /> 
 </head>
 
@@ -84,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="modules.html">model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples-Fred.html">Using Fred</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Using Indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples-MutualFundsIndia.html">Using MutualFundsIndia</a></li>
 </ul>
 
             
@@ -152,6 +154,9 @@
 <h1>Using Indices<a class="headerlink" href="#using-indices" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;This example illustrates how to get a list of all the latest NSE Indices&quot;&quot;&quot;</span>
 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+    
 <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">func</span>
 <span class="kn">from</span> <span class="nn">plutoPy.model</span> <span class="kn">import</span> <span class="n">RoutingSession</span><span class="p">,</span> <span class="n">Indices</span>
 
@@ -159,11 +164,11 @@
 <span class="n">end_dt</span> <span class="o">=</span> <span class="n">RoutingSession</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Indices</span><span class="o">.</span><span class="n">NseTimeSeries</span><span class="o">.</span><span class="n">TIME_STAMP</span><span class="p">))</span><span class="o">.</span><span class="n">scalar</span><span class="p">()</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">RoutingSession</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Indices</span><span class="o">.</span><span class="n">NseTimeSeries</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span><span class="o">.</span>\
-                        <span class="nb">filter</span><span class="p">(</span><span class="n">Indices</span><span class="o">.</span><span class="n">NseTimeSeries</span><span class="o">.</span><span class="n">TIME_STAMP</span> <span class="o">==</span> <span class="n">end_dt</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+            <span class="nb">filter</span><span class="p">(</span><span class="n">Indices</span><span class="o">.</span><span class="n">NseTimeSeries</span><span class="o">.</span><span class="n">TIME_STAMP</span> <span class="o">==</span> <span class="n">end_dt</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;fetched: {len(results)}&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -175,6 +180,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples-MutualFundsIndia.html" class="btn btn-neutral float-right" title="Using MutualFundsIndia" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="examples-Fred.html" class="btn btn-neutral float-left" title="Using Fred" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

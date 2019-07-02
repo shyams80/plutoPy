@@ -6,3 +6,4 @@ model
 
    Fred
    Indices
+   MutualFundsIndia

@@ -1,7 +1,4 @@
-.. plutoPy documentation master file, created by
-   sphinx-quickstart on Tue Jun 18 16:18:55 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. plutoPy documentation
 
 Welcome to plutoPy's documentation!
 ===================================
@@ -13,6 +10,7 @@ Welcome to plutoPy's documentation!
    modules
    examples-Fred
    examples-Indices
+   examples-MutualFundsIndia
    
 Indices and tables
 ==================

@@ -9,4 +9,5 @@ plutoPy.egg-info/top_level.txt
 plutoPy/model/Db.py
 plutoPy/model/Fred.py
 plutoPy/model/Indices.py
+plutoPy/model/MutualFundsIndia.py
 plutoPy/model/RoutingSession.py

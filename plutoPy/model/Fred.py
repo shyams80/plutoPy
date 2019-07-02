@@ -5,7 +5,7 @@ sources: https://fred.stlouisfed.org/
 .. module:: Fred
     :synopsis: Query the St. Louis Fed FRED database cache
 """
-from sqlalchemy import Column, Integer, String, Date, Float
+from sqlalchemy import Column, Integer, String, Date, Float, PrimaryKeyConstraint
 from sqlalchemy.ext.declarative import declarative_base
 from datetime import date, datetime
 
@@ -18,9 +18,11 @@ class TimeSeries(Base, StockVizUs):
     
     __tablename__ = 'FRED_OBSERVATION'
     
-    SERIES_ID = Column(Integer, primary_key=True, nullable=False)
+    SERIES_ID = Column(Integer, nullable=False)
     TIME_STAMP = Column(Date, nullable=False)
     VAL = Column(Float, nullable=False)
+    
+    __table_args__ = (PrimaryKeyConstraint('SERIES_ID', 'TIME_STAMP'),)
     
     def __repr__(self):
         return f"{self.TIME_STAMP.strftime('%Y-%b-%d')},{self.VAL}"
