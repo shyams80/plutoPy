@@ -98,6 +98,7 @@ class Portfolio(Base, StockViz):
     SYMBOL = Column(String(50), nullable=True) #: where available, the NSE ticker/symbol of the position
     NAME = Column(String(510), nullable=False) #: name of the position
     SECTOR = Column(String(50), nullable=True) #: BASIC MATERIALS, FINANCIAL SERVICES, CONSUMER DEFENSIVE, etc...
+    INDUSTRY_BSE = Column(String(254), nullable=True) #: BSE's SECTOR classification.
     
     WEIGHTAGE = Column(Float, nullable=True) #: weightage of the position in the portfolio (%)
 
