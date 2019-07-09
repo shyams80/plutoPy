@@ -1,7 +1,0 @@
-README.md
-setup.py
-plutoPy/plutoPy.egg-info/PKG-INFO
-plutoPy/plutoPy.egg-info/SOURCES.txt
-plutoPy/plutoPy.egg-info/dependency_links.txt
-plutoPy/plutoPy.egg-info/requires.txt
-plutoPy/plutoPy.egg-info/top_level.txt

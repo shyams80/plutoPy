@@ -1,2 +1,6 @@
 plutoPy/config.ini
 examples/config.ini
+*.egg-info/
+__pycache__/
+dist/
+build/
