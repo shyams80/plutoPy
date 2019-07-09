@@ -49,7 +49,7 @@ class NseConstituents(Base, StockViz):
     __table_args__ = (PrimaryKeyConstraint('INDEX_NAME', 'TIME_STAMP', 'SYMBOL'),)
     
     def __repr__(self):
-        return f"{self.NAME}:  {self.SYMBOL}"
+        return f"{self.NAME}: {self.SYMBOL}"
 
 class BseTimeSeries(Base, StockViz):
     """Query the index time-series published by the BSE"""
@@ -85,4 +85,9 @@ class BseConstituents(Base, StockViz):
     __table_args__ = (PrimaryKeyConstraint('INDEX_NAME', 'INDEX_DATE', 'SECURITY_CODE'),)
     
     def __repr__(self):
-        return f"{self.NAME}:  {self.SECURITY_NAME}"    
+        return f"{self.NAME}: {self.SECURITY_NAME}"   
+    
+
+
+    
+    

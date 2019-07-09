@@ -11,6 +11,7 @@ Welcome to plutoPy's documentation!
    examples-Fred
    examples-Indices
    examples-MutualFundsIndia
+   examples-NasdaqOmx
    
 Indices and tables
 ==================

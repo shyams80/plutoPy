@@ -7,3 +7,4 @@ model
    Fred
    Indices
    MutualFundsIndia
+   NasdaqOmx
