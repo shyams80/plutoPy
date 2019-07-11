@@ -14,6 +14,22 @@ from .Db import StockViz, StockVizUs2
 
 Base = declarative_base()
 
+class IndiaVixTimeSeries(Base, StockViz):
+    """Query the India VIX time-series data published by the NSE"""
+    
+    __tablename__ = 'VIX_HISTORY'
+    
+    TIME_STAMP = Column(Date, primary_key=True, nullable=False)
+    
+    HIGH = Column('PX_HIGH', Float, nullable=True)
+    LOW = Column('PX_LOW', Float, nullable=True)
+    OPEN = Column('PX_OPEN', Float, nullable=True)
+    CLOSE = Column('PX_CLOSE', Float, nullable=True)
+    
+    def __repr__(self):
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.CLOSE}"
+    
+
 class IndiaGsecTimeSeries(Base, StockViz):
     """Query the Indian Government Soverign Bond index time-series published by the CCIL"""
     
@@ -31,7 +47,7 @@ class IndiaGsecTimeSeries(Base, StockViz):
     __table_args__ = (PrimaryKeyConstraint('INDEX_NAME', 'TIME_STAMP'),)
     
     def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')},{self.NAME}: {self.TRI}"
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')},{self.NAME}: {self.TRI}, {self.YTM}, {self.DURATION}"
     
 
 class NseTimeSeries(Base, StockViz):
