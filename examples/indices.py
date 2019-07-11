@@ -7,6 +7,18 @@ sys.path.append("..")
 from sqlalchemy import func
 from plutoPy.model import RoutingSession, Indices
 
+# fetch the latest rates across tenors
+
+end_dt = RoutingSession.session.query(func.max(Indices.IndiaGsecTimeSeries.TIME_STAMP)).scalar()
+
+results = (RoutingSession.session.query(Indices.IndiaGsecTimeSeries)
+            .filter(Indices.IndiaGsecTimeSeries.TIME_STAMP == end_dt)
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)
+
 # a list of all current NSE indices
 
 end_dt = RoutingSession.session.query(func.max(Indices.NseTimeSeries.TIME_STAMP)).scalar()
@@ -47,3 +59,15 @@ print(f"fetched: {len(results)}")
 for instance in results:
     print(instance)
 
+# fetch index date ranges published on yahoo finance
+
+results = (RoutingSession.session.query(Indices.YahooFinanceTimeSeries.NAME, 
+                                        func.min(Indices.YahooFinanceTimeSeries.TIME_STAMP).label("start_dt"), 
+                                        func.max(Indices.YahooFinanceTimeSeries.TIME_STAMP).label("end_dt"))
+            .group_by(Indices.YahooFinanceTimeSeries.NAME)
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)
+    

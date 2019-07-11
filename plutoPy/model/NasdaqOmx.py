@@ -1,6 +1,6 @@
 """NASDAQOMX Indices
 
-sources: https://indexes.nasdaqomx.com/ https://www.quandl.com/data/NASDAQOMX-NASDAQ-OMX-Global-Index-Data
+sources: https://indexes.nasdaqomx.com/ https://www.quandl.com/
 
 .. module:: NasdaqOmx
     :synopsis: Query NASDAQOMX total-return (TR) index time-series
