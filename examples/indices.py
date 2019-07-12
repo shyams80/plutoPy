@@ -7,6 +7,15 @@ sys.path.append("..")
 from sqlalchemy import func
 from plutoPy.model import RoutingSession, Indices
 
+# fetch the last 10 day India VIX levels
+
+results = (RoutingSession.session.query(Indices.IndiaVixTimeSeries)
+           .order_by(Indices.IndiaVixTimeSeries.TIME_STAMP.desc())
+           .limit(10))
+
+for instance in results:
+    print(instance)
+    
 # fetch the latest rates across tenors
 
 end_dt = RoutingSession.session.query(func.max(Indices.IndiaGsecTimeSeries.TIME_STAMP)).scalar()

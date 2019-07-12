@@ -9,9 +9,11 @@ Welcome to plutoPy's documentation!
 
    modules
    examples-Fred
+   examples-WorldBank
+   examples-NasdaqOmx
+   examples-YieldCurve
    examples-Indices
    examples-MutualFundsIndia
-   examples-NasdaqOmx
    
 Indices and tables
 ==================

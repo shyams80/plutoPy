@@ -5,6 +5,8 @@ model
    :maxdepth: 4
 
    Fred
+   WorldBank
+   NasdaqOmx
+   YieldCurve
    Indices
    MutualFundsIndia
-   NasdaqOmx
