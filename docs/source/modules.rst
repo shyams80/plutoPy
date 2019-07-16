@@ -10,3 +10,5 @@ model
    YieldCurve
    Indices
    MutualFundsIndia
+   EquitiesIndiaNse
+   

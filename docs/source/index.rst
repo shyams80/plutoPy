@@ -14,6 +14,7 @@ Welcome to plutoPy's documentation!
    examples-YieldCurve
    examples-Indices
    examples-MutualFundsIndia
+   examples-EquitiesIndiaNse
    
 Indices and tables
 ==================

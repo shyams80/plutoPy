@@ -6,3 +6,6 @@ class StockVizUs:
     
 class StockVizUs2:
     pass        
+
+class StockVizDyn:
+    pass
