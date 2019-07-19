@@ -97,7 +97,7 @@ class EodAdjustedTimeSeries(Base, StockVizDyn):
     __tablename__ = 'eod_adjusted_nse'
     
     SYMBOL = Column('ticker', String(50), nullable=False) 
-    TIME_STAMP = Column('date_stamp', IntegerDate, nullable = False)
+    TIME_STAMP = Column('date_stamp', Date, nullable = False)
     
     HIGH = Column('h', Float, nullable=True)
     LOW = Column('l', Float, nullable=True)
@@ -142,6 +142,22 @@ class CorporateActions(Base, StockViz):
     
     def __repr__(self):
         return f"{self.SYMBOL}({self.SERIES})/{self.EX_DATE.strftime('%Y-%b-%d')}: {self.PURPOSE}"
+
+class CorporateEvents(Base, StockViz):
+    """Query the corporate events for listed stocks"""
+    
+    __tablename__ = 'CORP_RESULTS_DATE'
+    
+    SYMBOL = Column(String(10), nullable=False) 
+    DISC_DATE = Column(Date, nullable = False) #: when was the event disclosed?
+    
+    PURPOSE = Column('TITLE', String(256), nullable=False)
+    EVENT_DATE = Column('BM_DATE', Date, nullable=False) #: when was the event held?
+    
+    AUTO_ID = Column(BigInteger, primary_key=True, nullable=False)
+    
+    def __repr__(self):
+        return f"{self.SYMBOL}({self.DISC_DATE.strftime('%Y-%b-%d')})/{self.EVENT_DATE.strftime('%Y-%b-%d')}: {self.PURPOSE}"
     
 class CorporateResultsMeta(Base, StockViz):
     """Query to obtain the REF_ID to lookup CorporateResults for a specific period"""

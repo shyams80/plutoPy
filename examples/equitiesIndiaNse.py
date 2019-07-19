@@ -114,7 +114,18 @@ results = (RoutingSession.session.query(EquitiesIndiaNse.CorporateActions)
 
 for instance in results:
     print(instance)
-    
+
+# fetch the last 10 corporate events for State Bank of India
+
+results = (RoutingSession.session.query(EquitiesIndiaNse.CorporateEvents)
+            .filter(EquitiesIndiaNse.CorporateEvents.SYMBOL == 'SBIN')
+            .order_by(EquitiesIndiaNse.CorporateEvents.EVENT_DATE.desc())
+            .limit(10)
+            .all())
+
+for instance in results:
+    print(instance)
+        
     
 # fetch the last 24 quarter EPS for State Bank of India
 
