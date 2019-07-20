@@ -11,7 +11,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from datetime import date, datetime
 
 from .Db import StockViz, StockVizDyn
-from .IntegerDate import IntegerDate
 
 Base = declarative_base()
 

@@ -15,6 +15,7 @@ Welcome to plutoPy's documentation!
    examples-Indices
    examples-MutualFundsIndia
    examples-EquitiesIndiaNse
+   examples-CommodityFuturesAndOptions
    
 Indices and tables
 ==================
