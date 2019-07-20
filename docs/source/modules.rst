@@ -11,4 +11,5 @@ model
    Indices
    MutualFundsIndia
    EquitiesIndiaNse
+   EquitiesFuturesAndOptionsIndiaNse
    CommodityFuturesAndOptions
