@@ -43,6 +43,9 @@ results = (RoutingSession.session.query(EquitiesFuturesAndOptionsIndiaNse.Option
       .order_by(EquitiesFuturesAndOptionsIndiaNse.OptionsEodTimeSeries.STRIKE, EquitiesFuturesAndOptionsIndiaNse.OptionsEodTimeSeries.OTYPE)
       .all())
 
+for instance in results:
+    print(instance)
+    
 # get all greeks for the NIFTY option contracts at the nearest expiry traded right now
 
 print("greeks for the NIFTY option contracts at the nearest expiry traded right now")

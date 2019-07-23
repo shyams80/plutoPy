@@ -9,3 +9,6 @@ class StockVizUs2:
 
 class StockVizDyn:
     pass
+
+class StockVizBeka:
+    pass

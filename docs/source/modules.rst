@@ -13,3 +13,7 @@ model
    EquitiesIndiaNse
    EquitiesFuturesAndOptionsIndiaNse
    CommodityFuturesAndOptions
+   Currencies
+   InvestmentFlowsIndia
+   
+   
