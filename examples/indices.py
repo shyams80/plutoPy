@@ -4,7 +4,7 @@ the constituents of a specific index."""
 import sys
 sys.path.append("..")
     
-from sqlalchemy import func
+from sqlalchemy import func, text
 from plutoPy.model import RoutingSession, Indices
 
 # fetch the last 10 day India VIX levels
@@ -80,3 +80,27 @@ print(f"fetched: {len(results)}")
 for instance in results:
     print(instance)
     
+# show data-ranges for Fama-french factors
+
+results = (RoutingSession.session.query(Indices.FamaFrench5Factor3x2Daily.KEY_ID, 
+                                        func.min(Indices.FamaFrench5Factor3x2Daily.TIME_STAMP).label("start_dt"), 
+                                        func.max(Indices.FamaFrench5Factor3x2Daily.TIME_STAMP).label("end_dt"))
+            .group_by(Indices.FamaFrench5Factor3x2Daily.KEY_ID)
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)
+
+# show data-ranges for Fama-french industry daily returns
+
+results = (RoutingSession.session.query(Indices.FamaFrenchIndustry49Daily.KEY_ID, 
+                                        func.min(Indices.FamaFrenchIndustry49Daily.TIME_STAMP).label("start_dt"), 
+                                        func.max(Indices.FamaFrenchIndustry49Daily.TIME_STAMP).label("end_dt"))
+            .group_by(Indices.FamaFrenchIndustry49Daily.KEY_ID)
+            .order_by(text("start_dt"))
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)
