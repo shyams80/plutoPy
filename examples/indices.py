@@ -104,3 +104,16 @@ results = (RoutingSession.session.query(Indices.FamaFrenchIndustry49Daily.KEY_ID
 print(f"fetched: {len(results)}")
 for instance in results:
     print(instance)
+    
+# show data-ranges for Fama-french momentum daily returns
+
+results = (RoutingSession.session.query(Indices.FamaFrenchMomentumDaily.KEY_ID, 
+                                        func.min(Indices.FamaFrenchMomentumDaily.TIME_STAMP).label("start_dt"), 
+                                        func.max(Indices.FamaFrenchMomentumDaily.TIME_STAMP).label("end_dt"))
+            .group_by(Indices.FamaFrenchMomentumDaily.KEY_ID)
+            .order_by(text("start_dt"))
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)    
