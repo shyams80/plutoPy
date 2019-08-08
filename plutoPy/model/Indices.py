@@ -5,7 +5,6 @@ sources:
     https://bseindia.com/ 
     https://www.ccilindia.com 
     https://finance.yahoo.com/
-    http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/index.html
 
 .. module:: Indices
     :synopsis: Query index time-series from various sources
@@ -152,50 +151,4 @@ class YahooFinanceTimeSeries(Base, StockVizUs2):
     def __repr__(self):
         return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.NAME}, {self.CLOSE}"
     
-class FamaFrench5Factor3x2Daily(Base, StockVizUs2):
-    """Query the Fama-French 5-factor daily returns (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/f-f_5_factors_2x3.html)"""    
     
-    __tablename__ = "FAMA_FRENCH_5_FACTOR_DAILY"
-    
-    TIME_STAMP = Column(Date, nullable=False)
-    KEY_ID = Column(String(50), nullable=False) #: SMB, RMW, RF, MKT-RF, HML, CMA
-    
-    DAILY_RETURN = Column(Float, nullable=True)
-    
-    __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP'),)
-    
-    def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}: {self.DAILY_RETURN}"
-    
-class FamaFrenchIndustry49Daily(Base, StockVizUs2):
-    """Query the Fama-French daily returns of 49 different industries (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_49_ind_port.html)"""    
-    
-    __tablename__ = "FAMA_FRENCH_INDUSTRY_49_DAILY"
-    
-    TIME_STAMP = Column(Date, nullable=False)
-    KEY_ID = Column(String(50), nullable=False) #: Agric, Food, Soda, Beer, etc... 
-    
-    DAILY_RETURN = Column(Float, nullable=True)
-    
-    __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP'),)
-    
-    def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}: {self.DAILY_RETURN}"    
-
-class FamaFrenchMomentumDaily(Base, StockVizUs2):
-    """Query the Fama-French daily returns of momentum factor and portfolios
-    factor: https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_mom_factor_daily.html
-    portfolios: https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_10_port_form_pr_12_2_daily.html
-    """    
-    
-    __tablename__ = "FAMA_FRENCH_MOMENTUM_DAILY"
-    
-    TIME_STAMP = Column(Date, nullable=False)
-    KEY_ID = Column(String(50), nullable=False) #: MOM, HI_PRIOR, LO_PRIOR, PRIOR_[2..9]
-    
-    DAILY_RETURN = Column(Float, nullable=True)
-    
-    __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP'),)
-    
-    def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}: {self.DAILY_RETURN}"     

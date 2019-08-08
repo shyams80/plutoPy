@@ -19,6 +19,7 @@ Welcome to plutoPy's documentation!
    examples-CommodityFuturesAndOptions
    examples-Currencies
    examples-InvestmentFlowsIndia
+   examples-FamaFrench
    
 Indices and tables
 ==================

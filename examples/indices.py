@@ -80,40 +80,4 @@ print(f"fetched: {len(results)}")
 for instance in results:
     print(instance)
     
-# show data-ranges for Fama-french factors
 
-results = (RoutingSession.session.query(Indices.FamaFrench5Factor3x2Daily.KEY_ID, 
-                                        func.min(Indices.FamaFrench5Factor3x2Daily.TIME_STAMP).label("start_dt"), 
-                                        func.max(Indices.FamaFrench5Factor3x2Daily.TIME_STAMP).label("end_dt"))
-            .group_by(Indices.FamaFrench5Factor3x2Daily.KEY_ID)
-            .all())
-
-print(f"fetched: {len(results)}")
-for instance in results:
-    print(instance)
-
-# show data-ranges for Fama-french industry daily returns
-
-results = (RoutingSession.session.query(Indices.FamaFrenchIndustry49Daily.KEY_ID, 
-                                        func.min(Indices.FamaFrenchIndustry49Daily.TIME_STAMP).label("start_dt"), 
-                                        func.max(Indices.FamaFrenchIndustry49Daily.TIME_STAMP).label("end_dt"))
-            .group_by(Indices.FamaFrenchIndustry49Daily.KEY_ID)
-            .order_by(text("start_dt"))
-            .all())
-
-print(f"fetched: {len(results)}")
-for instance in results:
-    print(instance)
-    
-# show data-ranges for Fama-french momentum daily returns
-
-results = (RoutingSession.session.query(Indices.FamaFrenchMomentumDaily.KEY_ID, 
-                                        func.min(Indices.FamaFrenchMomentumDaily.TIME_STAMP).label("start_dt"), 
-                                        func.max(Indices.FamaFrenchMomentumDaily.TIME_STAMP).label("end_dt"))
-            .group_by(Indices.FamaFrenchMomentumDaily.KEY_ID)
-            .order_by(text("start_dt"))
-            .all())
-
-print(f"fetched: {len(results)}")
-for instance in results:
-    print(instance)    

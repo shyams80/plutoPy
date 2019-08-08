@@ -15,5 +15,6 @@ model
    CommodityFuturesAndOptions
    Currencies
    InvestmentFlowsIndia
+   FamaFrench
    
    
