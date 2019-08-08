@@ -22,12 +22,12 @@ class FiveFactor3x2Daily(Base, StockVizUs2):
     TIME_STAMP = Column(Date, nullable=False)
     KEY_ID = Column(String(50), nullable=False) #: SMB, RMW, RF, MKT-RF, HML, CMA
     
-    DAILY_RETURN = Column(Float, nullable=True)
+    RET = Column(Float, nullable=True)
     
     __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP'),)
     
     def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}: {self.DAILY_RETURN}"
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}: {self.RET}"
     
 class Industry49Daily(Base, StockVizUs2):
     """Query the Fama-French daily returns of 49 different industries (http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/det_49_ind_port.html)"""    
@@ -38,12 +38,12 @@ class Industry49Daily(Base, StockVizUs2):
     KEY_ID = Column(String(50), nullable=False) #: AGRIC, BANKS, CHEMS, etc... 
     RET_TYPE = Column(String(50), nullable=False) #: AVWRD - Average Value Weighted Returns Daily, AEWRD - Average Equal Weighted Returns Daily
     
-    DAILY_RETURN = Column(Float, nullable=True)
+    RET = Column(Float, nullable=True)
     
     __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP', 'RET_TYPE'),)
     
     def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}, {self.RET_TYPE}: {self.DAILY_RETURN}"    
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}, {self.RET_TYPE}: {self.RET}"    
 
 class MomentumDaily(Base, StockVizUs2):
     """Query the Fama-French daily returns of momentum factor and portfolios
@@ -57,12 +57,12 @@ class MomentumDaily(Base, StockVizUs2):
     KEY_ID = Column(String(50), nullable=False) #: MOM, HI_PRIOR, LO_PRIOR, PRIOR_[2..9]
     RET_TYPE = Column(String(50), nullable=False) #: M for KEY_ID = MOM, AVWRD - Average Value Weighted Returns Daily, AEWRD - Average Equal Weighted Returns Daily
     
-    DAILY_RETURN = Column(Float, nullable=True)
+    RET = Column(Float, nullable=True)
     
     __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP', 'RET_TYPE'),)
     
     def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}, {self.RET_TYPE}: {self.DAILY_RETURN}" 
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}, {self.RET_TYPE}: {self.RET}" 
     
 class MomentumMonthly(Base, StockVizUs2):
     """Query the Fama-French daily returns of momentum factor and portfolios
@@ -76,10 +76,10 @@ class MomentumMonthly(Base, StockVizUs2):
     KEY_ID = Column(String(50), nullable=False) #: MOM, HI_PRIOR, LO_PRIOR, PRIOR_[2..9]
     RET_TYPE = Column(String(50), nullable=False) #: M for KEY_ID = MOM, AVWRD - Average Value Weighted Returns Daily, AEWRD - Average Equal Weighted Returns Daily
     
-    DAILY_RETURN = Column(Float, nullable=True)
+    RET = Column(Float, nullable=True)
     
     __table_args__ = (PrimaryKeyConstraint('KEY_ID', 'TIME_STAMP', 'RET_TYPE'),)
     
     def __repr__(self):
-        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}, {self.RET_TYPE}: {self.DAILY_RETURN}" 
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}, {self.KEY_ID}, {self.RET_TYPE}: {self.RET}" 
         
