@@ -80,4 +80,16 @@ print(f"fetched: {len(results)}")
 for instance in results:
     print(instance)
     
+# fetch index date ranges published by Barclays
 
+results = (RoutingSession.session.query(Indices.BarclaysMeta.FAMILY, Indices.BarclaysMeta.NAME, 
+                                        func.min(Indices.BarclaysTimeSeries.TIME_STAMP).label("start_dt"), 
+                                        func.max(Indices.BarclaysTimeSeries.TIME_STAMP).label("end_dt"))
+            .join(Indices.BarclaysTimeSeries, Indices.BarclaysMeta.TICKER == Indices.BarclaysTimeSeries.TICKER)
+            .group_by(Indices.BarclaysMeta.FAMILY, Indices.BarclaysMeta.NAME)
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)
+    

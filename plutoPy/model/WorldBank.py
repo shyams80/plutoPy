@@ -37,7 +37,7 @@ class Meta(Base, StockVizUs):
         return f"{self.COUNTRY_NAME}/{self.INDICATOR_NAME}: {self.COUNTRY_KEY}/{self.INDICATOR_KEY} ~ {self.START_YEAR} - {self.END_YEAR}"
     
 class TimeSeries(Base, StockVizUs): 
-    """Query the Global Economic Monitor data the World Bank""" 
+    """Query the Global Economic Monitor data published by the World Bank""" 
     
     __tablename__ = 'WORLD_BANK_OBSERVATION'   
     

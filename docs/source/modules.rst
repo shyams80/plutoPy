@@ -6,6 +6,7 @@ model
 
    Fred
    WorldBank
+   InternationalMonetaryFund
    NasdaqOmx
    YieldCurve
    Indices
@@ -16,5 +17,6 @@ model
    Currencies
    InvestmentFlowsIndia
    FamaFrench
+   Yale
    
    

@@ -10,6 +10,7 @@ Welcome to plutoPy's documentation!
    modules
    examples-Fred
    examples-WorldBank
+   examples-InternationalMonetaryFund
    examples-NasdaqOmx
    examples-YieldCurve
    examples-Indices
@@ -20,6 +21,7 @@ Welcome to plutoPy's documentation!
    examples-Currencies
    examples-InvestmentFlowsIndia
    examples-FamaFrench
+   examples-Yale
    
 Indices and tables
 ==================

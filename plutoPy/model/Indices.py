@@ -5,6 +5,7 @@ sources:
     https://bseindia.com/ 
     https://www.ccilindia.com 
     https://finance.yahoo.com/
+    https://indices.barclays
 
 .. module:: Indices
     :synopsis: Query index time-series from various sources
@@ -151,4 +152,36 @@ class YahooFinanceTimeSeries(Base, StockVizUs2):
     def __repr__(self):
         return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.NAME}, {self.CLOSE}"
     
+class BarclaysMeta(Base, StockVizUs2):
+    """Meta information about the BarclaysTimeSeries by TICKER"""
+    
+    __tablename__ = 'BARCLAYS_META'
+    
+    TICKER = Column(String(50), primary_key=True, nullable=False)
+    DATE_LIVE = Column(Date, nullable=True) #: Date when the index went live
+    DATE_BASE = Column(Date, nullable=True) #: Date from when the index is calculated
+    
+    NAME = Column('NAME_WEB', String(126), nullable=True)
+    FAMILY = Column('NAME_FAMILY', String(50), nullable=True)
+    
+    RETURN_TYPE = Column(String(50), nullable=True) #: Excess/Price/Total Return
+    CURRENCY = Column(String(10), nullable=True)
+    
+    def __repr__(self):
+        return f"{self.TICKER}: {self.FAMILY}/{self.NAME}/{self.RETURN_TYPE}, {self.CURRENCY}"
+
+class BarclaysTimeSeries(Base, StockVizUs2):
+    """Query the index time-series published by Barclays"""
+    
+    __tablename__ = 'BARCLAYS_DATA'
+    
+    TICKER = Column(String(50), nullable=False)
+    TIME_STAMP = Column(Date, nullable=False)
+    CLOSE = Column('VAL', Float, nullable=False)
+    
+    __table_args__ = (PrimaryKeyConstraint('TICKER', 'TIME_STAMP'),)
+    
+    def __repr__(self):
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.TICKER}, {self.CLOSE}"
+
     
