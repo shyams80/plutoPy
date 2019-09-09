@@ -8,7 +8,7 @@ from ..Config import config
 import plutoDbPy
 
 dbNames = config['DEFAULT']['DB_NAMES'].split(",")
-dbNames = [qn.strip() for qn in queueNames]
+dbNames = [dn.strip() for dn in dbNames]
 
 qpass = urllib.parse.quote_plus(config['DEFAULT']['REDIS_PASSWORD'])
 redisSever = config['DEFAULT']['REDIS_SERVER']
@@ -16,7 +16,7 @@ redisSever = config['DEFAULT']['REDIS_SERVER']
 engines = {}
 for dbName in dbNames:
     conTemplate = config["CONNECTIONS"][dbName].replace("{XXX}", f":{qpass}@{redisSever}")
-    engines[dbNames[db]] = create_engine(conTemplate, module = plutoDbPy.dbapi, echo=False)
+    engines[dbName] = create_engine(conTemplate, module = plutoDbPy.dbapi, echo=False)
       
 
 class RoutingSession(Session):

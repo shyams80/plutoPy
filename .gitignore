@@ -1,5 +1,4 @@
-plutoPy/config.ini
-examples/config.ini
+*config.ini
 *.egg-info/
 __pycache__/
 __pycache__/*
