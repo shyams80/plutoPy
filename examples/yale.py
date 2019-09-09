@@ -3,7 +3,7 @@
 import sys
 sys.path.append("..")
     
-from sqlalchemy import func, text, extract
+from sqlalchemy import func, text, extract, and_
 from plutoPy.model import RoutingSession, Yale
 from datetime import date
 
@@ -23,7 +23,7 @@ for instance in results:
 
 startDate = date(1995, 12, 1)    
 results = (RoutingSession.session.query(extract('year', Yale.SP500.TIME_STAMP).label('Y'), Yale.SP500.CLOSE, Yale.SP500.CAPE)
-           .filter(extract('month', Yale.SP500.TIME_STAMP) == 12 and Yale.SP500.TIME_STAMP >= startDate)
+           .filter(and_(extract('month', Yale.SP500.TIME_STAMP) == 12, Yale.SP500.TIME_STAMP >= startDate))
            .order_by(Yale.SP500.TIME_STAMP)
            .all())
 
