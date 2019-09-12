@@ -108,7 +108,7 @@ class EodAdjustedTimeSeries(Base, StockVizDyn):
     __table_args__ = (PrimaryKeyConstraint('ticker', 'date_stamp'),)
     
     def __repr__(self):
-        return f"{self.SYMBOL}/{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.HIGH},{self.LOW},{self.OPEN},{self.CLOSE},{self.VOLUME}"
+        return f"{self.SYMBOL}/{self.TIME_STAMP}: {self.HIGH},{self.LOW},{self.OPEN},{self.CLOSE},{self.VOLUME}"
     
 class DailyReturns(Base, StockViz):
     """Query the percentage daily return (close-to-close) time-series for listed stocks"""    

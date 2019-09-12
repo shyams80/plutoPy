@@ -10,6 +10,20 @@ from sqlalchemy.sql.expression import cast
 from plutoPy.model import RoutingSession, Currencies
 from datetime import date, datetime, timedelta
 
+print("AlphaVantage end-of-day pairs:")
+
+results = (RoutingSession.session.query(Currencies.AvEodTimeSeries.SYMBOL, 
+                                        func.min(Currencies.AvEodTimeSeries.TIME_STAMP).label('start_dt'), 
+                                        func.max(Currencies.AvEodTimeSeries.TIME_STAMP).label('end_dt'))
+            .group_by(Currencies.AvEodTimeSeries.SYMBOL)
+            .order_by(text('start_dt'))).all()
+
+for instance in results:
+    print(instance)
+
+######################################################
+
+
 # get traded futures pairs
 
 print("traded futures pairs:")

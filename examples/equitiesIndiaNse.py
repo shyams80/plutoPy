@@ -7,6 +7,23 @@ from sqlalchemy import func, and_, or_
 from plutoPy.model import RoutingSession, EquitiesIndiaNse
 from datetime import date, datetime
 
+startDt = datetime(2019, 6, 15)    
+endDt = datetime(2019, 7, 15)
+
+print("adjusted eod")    
+results = (RoutingSession.session.query(EquitiesIndiaNse.EodAdjustedTimeSeries.TIME_STAMP, EquitiesIndiaNse.EodAdjustedTimeSeries.CLOSE)
+            .filter(and_(EquitiesIndiaNse.EodAdjustedTimeSeries.SYMBOL == 'UPL',
+                         EquitiesIndiaNse.EodAdjustedTimeSeries.TIME_STAMP >= startDt,
+                         EquitiesIndiaNse.EodAdjustedTimeSeries.TIME_STAMP <= endDt))
+            .order_by(EquitiesIndiaNse.EodAdjustedTimeSeries.TIME_STAMP)
+            .all())
+
+for instance in results:
+    print(instance)            
+
+
+########################################
+
 # fetch the earliest 10 listed equity
 
 results = (RoutingSession.session.query(EquitiesIndiaNse.Tickers)
