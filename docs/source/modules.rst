@@ -10,7 +10,9 @@ model
    NasdaqOmx
    YieldCurve
    Indices
+   ETFsUs
    MutualFundsIndia
+   EquitiesUs
    EquitiesIndiaNse
    EquitiesFuturesAndOptionsIndiaNse
    CommodityFuturesAndOptions

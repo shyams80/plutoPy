@@ -14,7 +14,9 @@ Welcome to plutoPy's documentation!
    examples-NasdaqOmx
    examples-YieldCurve
    examples-Indices
+   examples-ETFsUs
    examples-MutualFundsIndia
+   examples-EquitiesUs
    examples-EquitiesIndiaNse
    examples-EquitiesFuturesAndOptionsIndiaNse
    examples-CommodityFuturesAndOptions
