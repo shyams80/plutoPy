@@ -14,6 +14,7 @@ model
    MutualFundsIndia
    EquitiesUs
    EquitiesIndiaNse
+   EquitiesIndiaBse
    EquitiesFuturesAndOptionsIndiaNse
    CommodityFuturesAndOptions
    Currencies

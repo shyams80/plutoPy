@@ -18,6 +18,7 @@ Welcome to plutoPy's documentation!
    examples-MutualFundsIndia
    examples-EquitiesUs
    examples-EquitiesIndiaNse
+   examples-EquitiesIndiaBse
    examples-EquitiesFuturesAndOptionsIndiaNse
    examples-CommodityFuturesAndOptions
    examples-Currencies
