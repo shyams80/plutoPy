@@ -93,3 +93,16 @@ print(f"fetched: {len(results)}")
 for instance in results:
     print(instance)
     
+# fetch index date ranges published by Wilshire
+
+results = (RoutingSession.session.query(Indices.WilshireMeta.NAME, 
+                                        func.min(Indices.WilshireTimeSeries.TIME_STAMP).label("start_dt"), 
+                                        func.max(Indices.WilshireTimeSeries.TIME_STAMP).label("end_dt"))
+            .join(Indices.WilshireTimeSeries, Indices.WilshireMeta.ID == Indices.WilshireTimeSeries.ID)
+            .group_by(Indices.WilshireMeta.NAME)
+            .all())
+
+print(f"fetched: {len(results)}")
+for instance in results:
+    print(instance)
+    

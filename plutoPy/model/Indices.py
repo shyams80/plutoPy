@@ -6,6 +6,7 @@ sources:
     https://www.ccilindia.com 
     https://finance.yahoo.com/
     https://indices.barclays
+    https://wilshire.com/indexes
 
 .. module:: Indices
     :synopsis: Query index time-series from various sources
@@ -184,4 +185,29 @@ class BarclaysTimeSeries(Base, StockVizUs2):
     def __repr__(self):
         return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.TICKER}, {self.CLOSE}"
 
+class WilshireMeta(Base, StockVizUs2):
+    """Grab the ID to access the time-series"""
+    
+    __tablename__ = 'WILSHIRE_INDEX_META'
+    
+    ID = Column(Integer, primary_key=True, nullable=False)
+    NAME = Column('INDEX_NAME', String(126), nullable=False)
+    
+    def __repr__(self):
+        return f"{self.ID}: {self.NAME}"
+
+
+class WilshireTimeSeries(Base, StockVizUs2):
+    """Query the index time-series published by Wilshire"""
+    
+    __tablename__ = 'WILSHIRE_INDEX_DATA'
+    
+    ID = Column(Integer, nullable=False)
+    TIME_STAMP = Column(Date, nullable=False)
+    CLOSE = Column('TR', Float, nullable=False)
+    
+    __table_args__ = (PrimaryKeyConstraint('ID', 'TIME_STAMP'),)
+    
+    def __repr__(self):
+        return f"{self.TIME_STAMP.strftime('%Y-%b-%d')}: {self.ID}, {self.CLOSE}"
     
