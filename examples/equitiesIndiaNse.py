@@ -148,4 +148,13 @@ for instance in refIds:
     for r in results:
         print(r)
         
+# get raw ownership pattern of INFY
 
+results = (RoutingSession.session.query(EquitiesIndiaNse.ShareholdingPatternRaw)
+           .filter(and_(EquitiesIndiaNse.ShareholdingPatternRaw.SYMBOL == 'INFY', EquitiesIndiaNse.ShareholdingPatternRaw.KEY.ilike("%scrr%")))
+           .order_by(EquitiesIndiaNse.ShareholdingPatternRaw.TIME_STAMP)
+           .limit(10)
+           .all())
+
+for instance in results:
+    print(instance)

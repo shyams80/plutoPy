@@ -198,3 +198,21 @@ class CorporateResults(Base, StockViz):
     
     def __repr__(self):
         return f"{self.H1}/{self.H2}/{self.H3}/{self.H4}/{self.KEY}: {self.VALUE}"
+    
+
+class ShareholdingPatternRaw(Base, StockViz):
+    """Query and parse Share-holding patterns"""
+
+    __tablename__ = 'SHARE_HOLDING_PATTERN2'    
+    
+    SYMBOL = Column(String(10), nullable=False)
+    TIME_STAMP = Column('AS_OF', Date, nullable = False)
+    
+    KEY = Column(String(254), nullable=False)
+    VALUE = Column(Float, nullable = False)
+    
+    AUTO_ID = Column(BigInteger, primary_key=True, nullable=False)
+    
+    def __repr__(self):
+        return f"{self.SYMBOL}/{self.TIME_STAMP.strftime('%Y-%b-%d')}/{self.KEY}: {self.VALUE}"
+    
