@@ -158,3 +158,16 @@ results = (RoutingSession.session.query(EquitiesIndiaNse.ShareholdingPatternRaw)
 
 for instance in results:
     print(instance)
+    
+# get xbrl ownership pattern of 3MINDIA
+
+results = (RoutingSession.session.query(EquitiesIndiaNse.ShareholdingPatternXbrl)
+           .filter(and_(EquitiesIndiaNse.ShareholdingPatternXbrl.SYMBOL == '3MINDIA', 
+                        EquitiesIndiaNse.ShareholdingPatternXbrl.KEY_1 == 'ShareholdingOfPromoterAndPromoterGroup',
+                        EquitiesIndiaNse.ShareholdingPatternXbrl.KEY_2 == 'ShareholdingAsAPercentageOfTotalNumberOfShares'))
+           .order_by(EquitiesIndiaNse.ShareholdingPatternRaw.TIME_STAMP.desc())
+           .limit(10)
+           .all())
+
+for instance in results:
+    print(instance)    

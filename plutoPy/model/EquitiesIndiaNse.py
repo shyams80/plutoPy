@@ -215,4 +215,21 @@ class ShareholdingPatternRaw(Base, StockViz):
     
     def __repr__(self):
         return f"{self.SYMBOL}/{self.TIME_STAMP.strftime('%Y-%b-%d')}/{self.KEY}: {self.VALUE}"
+
+class ShareholdingPatternXbrl(Base, StockViz):
+    """Query and parse Share-holding patterns where data is made available in XBRL files"""
+
+    __tablename__ = 'SHARE_HOLDING_PATTERN_XBRL'    
     
+    SYMBOL = Column(String(10), nullable=False)
+    TIME_STAMP = Column('AS_OF', Date, nullable = False)
+    
+    KEY_1 = Column('K1', String(254), nullable=False)
+    KEY_2 = Column('K2', String(254), nullable=False)
+    VALUE = Column('V', Float, nullable = False)
+    
+    AUTO_ID = Column(BigInteger, primary_key=True, nullable=False)
+    
+    def __repr__(self):
+        return f"{self.SYMBOL}/{self.TIME_STAMP.strftime('%Y-%b-%d')}/{self.KEY_1}+{self.KEY_2}: {self.VALUE}"
+        
